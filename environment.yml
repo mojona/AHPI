@@ -1,9 +1,0 @@
-name: AHPI
-channels:
-  - defaults
-dependencies:
-  - python=3.10
-  - pandas
-  - numpy
-  - scipy
-  - pip

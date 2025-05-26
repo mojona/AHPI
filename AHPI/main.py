@@ -19,6 +19,8 @@ def AHPI(df, MII=50, MIO=50, minimum_iterations=10, convergence_threshold=0.01, 
     trial)'. The model is fitted using an Expectation-Maximization algorithm.
     The algorithm iteratively updates all the fitted values (outer loop) and in each iteration updates the fitted
     values. The fitting of the scores is done iteratively (inner loop).
+    For details see the methods of the paper "Data-Driven Law Firm Rankings to Reduce Information Asymmetry in Legal 
+    Disputes" (https://arxiv.org/abs/2408.16863v2).
 
 
     :param df:                      Dataframe of pairwise interactions with columns 'priv', 'unpriv', 'win_index' (int),
@@ -31,7 +33,9 @@ def AHPI(df, MII=50, MIO=50, minimum_iterations=10, convergence_threshold=0.01, 
     :param convergence_threshold:   Convergence threshold for scores, valence probabilities, privileges
     :param fit_valence_prob:        Boolean, determinig if the valence probabilities should be fitted or set to 1
     :param fit_privilege:           Boolean, determinig if the privileges should be fitted or set to 0
-    :return:                        Dictionaries of exponentials of the scores, valence probabilities, privileges
+    :return:                        -Dicitoniary of exponentials of the fitted scores
+                                    -Dictionary of fitted valence probabilities
+                                    -Dictionary of fitted privileges
     '''
 
     df = df.copy()      # Create a copy of the DataFrame to avoid modifying the original one
